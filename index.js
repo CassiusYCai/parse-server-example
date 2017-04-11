@@ -16,9 +16,22 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8',
   masterKey: process.env.MASTER_KEY || 'CloCxa3h4EpyMcNYDY1vimekeuofAN0DSGnA54dcrMF6YmPO', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://citizen-congress.herokuapp.com/parse',  // Don't forget to change to https if needed
+  serverURL: process.env.SERVER_URL || 'https://citizen-congress.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
+  push: {
+    android: {
+      senderId: '',
+      apiKey: ''
+    },
+    ios: {
+      pfx: 'certs/mycert.p12'.
+      cert: '',
+      bundleId: 'com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8',
+      key: '',
+      production: false
+    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
