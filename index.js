@@ -19,7 +19,17 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://citizen-congress.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  }
+  },
+  push: JSON.parse(process.env.PARSE_SERVER_PUSH || '{"android": { \
+        "senderId": "Your GCM sender ID", \
+        "apiKey": "Your API key" \
+    }, \
+    "ios": { \
+        "pfx": "certs/mycert.p12", \
+        "passphrase": "", \
+        "bundleId": "com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8", \
+        "production": false \
+    }}')
   // push: {
   //   android: {
   //     senderId: '',
