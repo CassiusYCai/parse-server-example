@@ -25,10 +25,10 @@ var api = new ParseServer({
         "apiKey": "Your API key" \
     }, \
     "ios": { \
-        "pfx": "certs/mycert.p12", \
+        "pfx": "certs/pushcertification.p12", \
         "passphrase": "Iamjasoncai1", \
         "bundleId": "com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8", \
-        "production": false \
+        "production": true \
     }}')
 //   push: {
 //     android: {
