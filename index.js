@@ -5,7 +5,7 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
-var databaseUri = 'mongodb://cassius:TimtxOtAORzJrOiU6XU12xvXLCQX6B6qZKdsyChZdglp8dkk@ds139430.mlab.com:39430/citizen-congress';
+var databaseUri = 'mongodb://jycai.njleg:Battleships1!@ds219098.mlab.com:19098/jycai-njleg'
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
@@ -14,35 +14,12 @@ if (!databaseUri) {
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
-  appId: process.env.APP_ID || 'com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8',
-  masterKey: process.env.MASTER_KEY || 'CloCxa3h4EpyMcNYDY1vimekeuofAN0DSGnA54dcrMF6YmPO', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://citizen-congress.herokuapp.com/parse',  // Don't forget to change to https if needed
+  appId: process.env.APP_ID || 'jycai-njleg',
+  masterKey: process.env.MASTER_KEY || 'master', //Add your master key here. Keep it secret!
+  serverURL: process.env.SERVER_URL || 'http://jycai-njleg.herokuapp.com/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
-  },
-  push: JSON.parse(process.env.PARSE_SERVER_PUSH || '{"android": { \
-        "senderId": "Your GCM sender ID", \
-        "apiKey": "Your API key" \
-    }, \
-    "ios": { \
-        "pfx": "certs/pushcertification.p12", \
-        "passphrase": "Iamjasoncai1", \
-        "bundleId": "com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8", \
-        "production": true \
-    }}')
-//   push: {
-//     android: {
-//       senderId: '',
-//       apiKey: ''
-//     },
-//     ios: {
-//       pfx: 'certs/mycert.p12',
-//       cert: '',
-//       bundleId: 'com.CitizenYbTAyg7Nj6jBrgWK4TpXiuFEjhN26gHghht3d7vb2KqUrii8',
-//       key: '',
-//       production: false
-//     }
-//   }
+  }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
